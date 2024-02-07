@@ -30,13 +30,13 @@
         }
 
         header h2 {
-            font-size: 2em; /* Adjust the font size as needed */
+            font-size: 2em;
             top: 50%;
             transform: translateY(-50%);
         }
 
         header p {
-            font-size: 1.2em; /* Adjust the font size as needed */
+            font-size: 1.2em;
             top: 75%;
             transform: translateY(-50%);
         }
@@ -47,7 +47,10 @@
             background-color: #fff;
             margin: 20px 0;
             position: relative;
-            color: white; /* Set text color to white */
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease-out forwards;
         }
 
         .info-layer img {
@@ -58,11 +61,13 @@
 
         .info-layer h2,
         .info-layer p {
-            color: white; /* Set text color to white */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            color: white;
+            position: relative;
+        }
+
+        .info-layer h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -70,6 +75,13 @@
             padding: 1em;
             background-color: #333;
             color: white;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
     <title>Warg</title>
@@ -102,5 +114,26 @@
     <footer>
         Kindly coded by Master_of_pooms
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var infoLayers = document.querySelectorAll('.info-layer');
+            infoLayers.forEach(function(layer) {
+                if (isElementInViewport(layer)) {
+                    layer.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    </script>
 </body>
 </html>
