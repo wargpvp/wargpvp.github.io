@@ -4,65 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-header {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background: url('header-image.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        header {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: url('header-image.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-header h2,
-header p {
-    color: white;
-    text-align: center;
-    position: absolute;
-}
+        header h2,
+        header p {
+            color: white;
+            text-align: center;
+            position: absolute;
+        }
 
-header h2 {
-    font-size: 2em; /* Adjust the font size as needed */
-    top: 50%;
-    transform: translateY(-50%);
-}
+        header h2 {
+            font-size: 2em; /* Adjust the font size as needed */
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-header p {
-    font-size: 1.2em; /* Adjust the font size as needed */
-    top: 75%;
-    transform: translateY(-50%);
-}
+        header p {
+            font-size: 1.2em; /* Adjust the font size as needed */
+            top: 75%;
+            transform: translateY(-50%);
+        }
 
-.info-layer {
-    text-align: center;
-    padding: 2em;
-    background-color: #fff;
-    margin: 20px 0;
-    position: relative;
-}
+        .info-layer {
+            text-align: center;
+            padding: 2em;
+            background-color: #fff;
+            margin: 20px 0;
+            position: relative;
+        }
 
-.info-layer img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #333;
-    color: white;
-}
+        .info-layer img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-/* Add more styles as needed */
+        .info-layer h2,
+        .info-layer p {
+            color: #333; /* Adjust the text color as needed */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+        }
     </style>
     <title>Warg</title>
 </head>
@@ -90,6 +97,7 @@ footer {
         <h2>Join Our Discord</h2>
         <p><a href="https://discord.gg/EbTpyN2c5h" target="_blank"><button>Click me</button></a></p>
     </section>
+
     <footer>
         Kindly coded by Master_of_pooms
     </footer>
