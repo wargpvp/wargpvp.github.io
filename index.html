@@ -50,7 +50,6 @@
             color: white;
             opacity: 0;
             transform: translateY(20px);
-            animation: slideIn 1s ease-out forwards;
         }
 
         .info-layer img {
@@ -93,19 +92,19 @@
         <p>Warg is a PvP-Gens server where you try to beat all three floors (Overworld, Nether, and End)</p>
     </header>
 
-    <section class="info-layer">
+    <section class="info-layer" style="animation: slideIn 1s ease-out forwards;">
         <img src="rules-image.jpg" alt="Server Rules">
         <h2>Server Rules</h2>
         <p>1. No Hacking<br>2. No griefing<br>3. Use common sense</p>
     </section>
 
-    <section class="info-layer">
+    <section class="info-layer" style="animation: slideIn 1s ease-out 0.5s forwards;">
         <img src="join-image.jpg" alt="Join Warg">
         <h2>Join Us Now!</h2>
         <p>Ip: Warg.minefort.com<br><b>Help! I get taken into the Minefort lobby.<br>Run /start warg, Wait a minute, then do /join warg</b></p>
     </section>
 
-    <section class="info-layer">
+    <section class="info-layer" style="animation: slideIn 1s ease-out 1s forwards;">
         <img src="Discord-image.jpg" alt="Join our Discord">
         <h2>Join Our Discord</h2>
         <p><a href="https://discord.gg/EbTpyN2c5h" target="_blank"><button>Click me</button></a></p>
@@ -119,8 +118,9 @@
         window.addEventListener('scroll', function() {
             var infoLayers = document.querySelectorAll('.info-layer');
             infoLayers.forEach(function(layer) {
-                if (isElementInViewport(layer)) {
+                if (isElementInViewport(layer) && !layer.classList.contains('animated')) {
                     layer.style.animationPlayState = 'running';
+                    layer.classList.add('animated');
                 }
             });
         });
