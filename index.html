@@ -47,9 +47,7 @@
             background-color: #fff;
             margin: 20px 0;
             position: relative;
-            color: white;
-            opacity: 0;
-            transform: translateY(20px);
+            color: black;
         }
 
         .info-layer img {
@@ -60,7 +58,7 @@
 
         .info-layer h2,
         .info-layer p {
-            color: white;
+            color: black;
             position: relative;
         }
 
@@ -75,13 +73,6 @@
             background-color: #333;
             color: white;
         }
-
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
     <title>Warg</title>
 </head>
@@ -92,19 +83,19 @@
         <p>Warg is a PvP-Gens server where you try to beat all three floors (Overworld, Nether, and End)</p>
     </header>
 
-    <section class="info-layer" style="animation: slideIn 1s ease-out forwards;">
+    <section class="info-layer">
         <img src="rules-image.jpg" alt="Server Rules">
         <h2>Server Rules</h2>
         <p>1. No Hacking<br>2. No griefing<br>3. Use common sense</p>
     </section>
 
-    <section class="info-layer" style="animation: slideIn 1s ease-out 0.5s forwards;">
+    <section class="info-layer">
         <img src="join-image.jpg" alt="Join Warg">
         <h2>Join Us Now!</h2>
         <p>Ip: Warg.minefort.com<br><b>Help! I get taken into the Minefort lobby.<br>Run /start warg, Wait a minute, then do /join warg</b></p>
     </section>
 
-    <section class="info-layer" style="animation: slideIn 1s ease-out 1s forwards;">
+    <section class="info-layer">
         <img src="Discord-image.jpg" alt="Join our Discord">
         <h2>Join Our Discord</h2>
         <p><a href="https://discord.gg/EbTpyN2c5h" target="_blank"><button>Click me</button></a></p>
@@ -113,27 +104,5 @@
     <footer>
         Kindly coded by Master_of_pooms
     </footer>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            var infoLayers = document.querySelectorAll('.info-layer');
-            infoLayers.forEach(function(layer) {
-                if (isElementInViewport(layer) && !layer.classList.contains('animated')) {
-                    layer.style.animationPlayState = 'running';
-                    layer.classList.add('animated');
-                }
-            });
-        });
-
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-    </script>
 </body>
 </html>
